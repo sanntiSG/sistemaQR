@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sistema QR — Presentación</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+/* ---- VARIABLES ---- */
+:root{
+  --bg1:#05080d;
+  --bg2:#0c1f27;
+  --glass:rgba(255,255,255,0.06);
+  --accent:#00f0ff;
+  --text:#f2f2f2;
+  --radius:18px;
+}
+
+/* ---- GENERALES ---- */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Poppins, sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  color:var(--text);
+  padding-bottom:60px;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1{
+  text-align:center;
+  padding:40px 20px 10px;
+  font-size:2.6rem;
+  font-weight:800;
+  color:white;
+  text-shadow:0 0 12px rgba(0,255,255,0.5);
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:20px;
+}
+
+/* ---- TARJETAS ---- */
+.section{
+  background:var(--glass);
+  backdrop-filter:blur(10px);
+  padding:22px;
+  border-radius:var(--radius);
+  margin-top:35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  animation:fadeup 0.8s ease;
+}
+
+@keyframes fadeup{
+  from{opacity:0; transform:translateY(25px)}
+  to{opacity:1; transform:none}
+}
+
+.section h2{
+  font-weight:700;
+  margin-bottom:10px;
+  text-shadow:0 0 8px rgba(0,255,255,0.45);
+}
+
+.section p{
+  color:rgba(255,255,255,0.75);
+  margin-bottom:14px;
+}
+
+/* ---- VIDEO ---- */
+.video-box{
+  width:100%;
+  border-radius:14px;
+  overflow:hidden;
+  margin-bottom:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.55);
+}
+
+video{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* ---- VIDEO VERTICAL MEJORADO ---- */
+.vertical-wrapper{
+  display:flex;
+  justify-content:center;
+  margin:20px 0;
+}
+
+.vertical-frame{
+  width:330px;                 /* Tamaño más fiel para video vertical */
+  max-width:90%;
+  border-radius:22px;
+  overflow:hidden;
+  background:black;
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.25),
+    0 0 45px rgba(0,255,255,0.10);
+  padding:10px;
+  border:1px solid rgba(0,255,255,0.25);
+}
+
+.vertical-frame video{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:14px;
+}
+
+
+/* ---- TAGS ---- */
+.tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.tag{
+  padding:6px 12px;
+  background:rgba(0,255,255,0.12);
+  border:1px solid rgba(0,255,255,0.35);
+  border-radius:50px;
+  font-size:.85rem;
+  letter-spacing:0.3px;
+  text-shadow:0 0 6px rgba(0,255,255,0.3);
+}
+
+/* VIDEO VERTICAL STYLE (OPTIONAL) */
+.vertical video{
+  max-height:480px;
+  object-fit:contain;
+  background:black;
+}
+
+@media(max-width:768px){
+  .vertical video{
+    max-height:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Sistema QR</h1>
+
+<div class="container">
+
+  <!-- ============================= -->
+  <!--        SECCIÓN 1              -->
+  <!-- ============================= -->
+  <div class="section">
+    <h2>1. Funcionamiento del sistema</h2>
+
+    <p>Este video muestra el proceso completo. Aquí se ve la creacion del QR junto a su ID y maquina asignada, sus datos y el funcionamiento general del sistema.</p>
+
+    <div class="video-box">
+      <!-- VIDEO HORIZONTAL -->
+      <video controls>
+        <source src="sistemaQR1.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <p>Tecnologías principales:</p>
+    <div class="tags">
+      <div class="tag">React</div>
+      <div class="tag">Python</div>
+      <div class="tag">QR dinamico</div>
+      <div class="tag">Automatización</div>
+    </div>
+  </div>
+
+<!-- ============================= -->
+<!--        SECCIÓN 2              -->
+<!-- ============================= -->
+<div class="section">
+  <h2>2. Vista desde el celular al escanear el QR</h2>
+
+  <p>Vista real capturada desde el celular mostrando el flujo del usuario al escanear un QR generado por el sistema.</p>
+
+  <div class="vertical-wrapper">
+    <div class="vertical-frame">
+      <video controls>
+        <source src="qrMobil.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!--        SECCIÓN 3              -->
+<!-- ============================= -->
+<div class="section">
+  <h2>3. Prototipo con realidad aumentada (No implementado)</h2>
+
+  <p>Prototipo conceptual donde el QR activaba elementos de realidad aumentada sobre el entorno físico del QR.</p>
+
+  <div class="vertical-wrapper">
+    <div class="vertical-frame">
+      <video controls>
+        <source src="AR1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
